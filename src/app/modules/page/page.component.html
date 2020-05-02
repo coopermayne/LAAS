@@ -1,0 +1,6 @@
+<div *ngIf="!pageContent"> <h2>Loading your page content</h2>
+</div>
+<div class="page-content" *ngIf="pageContent" [attr.data-wio-id]="pageContent.id">
+<div class="title" [innerHTML]="PrismicDOM.RichText.asHtml(pageContent.data.title, ctx.linkResolver)"></div>
+<div [innerHTML]="PrismicDOM.RichText.asHtml(pageContent.data.content, ctx.linkResolver)"></div>
+</div>
